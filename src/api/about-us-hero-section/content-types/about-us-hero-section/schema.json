@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_hero_sections",
+  "info": {
+    "singularName": "about-us-hero-section",
+    "pluralName": "about-us-hero-sections",
+    "displayName": "AboutUsHeroSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "backgrounds": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

@@ -1,21 +1,35 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface AboutUsHeroSection extends Schema.Component {
-  collectionName: 'components_about_us_hero_sections';
+export interface AboutUsStat extends Schema.Component {
+  collectionName: 'components_about_us_stats';
   info: {
-    displayName: 'HeroSection';
+    displayName: 'Stat';
     description: '';
   };
   attributes: {
-    title: Attribute.Text & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    value: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface AboutUsValue extends Schema.Component {
+  collectionName: 'components_about_us_values';
+  info: {
+    displayName: 'Value';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'about-us.hero-section': AboutUsHeroSection;
+      'about-us.stat': AboutUsStat;
+      'about-us.value': AboutUsValue;
     }
   }
 }

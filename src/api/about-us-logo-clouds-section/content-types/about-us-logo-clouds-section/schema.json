@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_logo_clouds_sections",
+  "info": {
+    "singularName": "about-us-logo-clouds-section",
+    "pluralName": "about-us-logo-clouds-sections",
+    "displayName": "AboutUsLogoCloudsSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    },
+    "logos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_values_sections",
+  "info": {
+    "singularName": "about-us-values-section",
+    "pluralName": "about-us-values-sections",
+    "displayName": "AboutUsValuesSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "describe": {
+      "type": "text",
+      "required": true
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.value",
+      "required": true
+    }
+  }
+}
