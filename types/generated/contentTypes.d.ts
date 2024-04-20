@@ -362,71 +362,29 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAlbumAlbum extends Schema.CollectionType {
-  collectionName: 'albums';
+export interface ApiAboutUsAboutUs extends Schema.SingleType {
+  collectionName: 'about_uses';
   info: {
-    singularName: 'album';
-    pluralName: 'albums';
-    displayName: 'album';
-    description: '';
+    singularName: 'about-us';
+    pluralName: 'about-uses';
+    displayName: 'AboutUs';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    category: Attribute.Relation<
-      'api::album.album',
-      'oneToOne',
-      'api::category.category'
-    >;
-    cover: Attribute.Media & Attribute.Required;
-    medias: Attribute.Media & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    heroSection: Attribute.Component<'about-us.hero-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::album.album',
+      'api::about-us.about-us',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::album.album',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'category';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    description: Attribute.Text;
-    type: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
+      'api::about-us.about-us',
       'oneToOne',
       'admin::user'
     > &
@@ -870,8 +828,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::album.album': ApiAlbumAlbum;
-      'api::category.category': ApiCategoryCategory;
+      'api::about-us.about-us': ApiAboutUsAboutUs;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
