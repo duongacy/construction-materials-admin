@@ -40,7 +40,7 @@ async function respond(ctx, next) {
   if (!ctx.url.startsWith("/api")) {
     return;
   }
-  ctx.response.body = flatten(ctx.response.body.data);
+  ctx.response.body = flatten(ctx.response.body);
 }
 
 module.exports = () => respond;

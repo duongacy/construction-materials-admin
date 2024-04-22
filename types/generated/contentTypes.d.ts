@@ -1061,7 +1061,8 @@ export interface ApiMemberMember extends Schema.CollectionType {
   info: {
     singularName: 'member';
     pluralName: 'members';
-    displayName: 'member';
+    displayName: 'Member';
+    description: '';
   };
   options: {
     draftAndPublish: true;
