@@ -40,7 +40,12 @@ async function respond(ctx, next) {
   if (!ctx.url.startsWith("/api")) {
     return;
   }
-  ctx.response.body = flatten(ctx.response.body);
+  const body = flatten(ctx.response.body);
+  if (!body.hasOwnProperty("data")) {
+    ctx.response.body = { data: body };
+  } else {
+    ctx.response.body = body;
+  }
 }
 
 module.exports = () => respond;
