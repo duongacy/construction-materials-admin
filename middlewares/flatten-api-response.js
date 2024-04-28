@@ -41,7 +41,7 @@ async function respond(ctx, next) {
     return;
   }
   const body = flatten(ctx.response.body);
-  if (!body.hasOwnProperty("data")) {
+  if (!body?.hasOwnProperty("data")) {
     ctx.response.body = { data: body };
   } else {
     ctx.response.body = body;
