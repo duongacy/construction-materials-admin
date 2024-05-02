@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "learning_finance_pages",
+  "info": {
+    "singularName": "learning-finance-page",
+    "pluralName": "learning-finance-pages",
+    "displayName": "LearningFinancePage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

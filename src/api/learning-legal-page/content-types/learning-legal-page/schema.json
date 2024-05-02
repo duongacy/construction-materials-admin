@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "learning_legal_pages",
+  "info": {
+    "singularName": "learning-legal-page",
+    "pluralName": "learning-legal-pages",
+    "displayName": "LearningLegalPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

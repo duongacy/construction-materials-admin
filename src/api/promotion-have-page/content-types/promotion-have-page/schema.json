@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "promotion_have_pages",
+  "info": {
+    "singularName": "promotion-have-page",
+    "pluralName": "promotion-have-pages",
+    "displayName": "PromotionHavePage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

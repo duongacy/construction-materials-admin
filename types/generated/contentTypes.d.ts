@@ -1046,6 +1046,12 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     content: Attribute.RichText & Attribute.Required;
+    thumb: Attribute.Media & Attribute.Required;
+    categories: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1056,13 +1062,12 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
-export interface ApiLearningCategoryLearningCategory
-  extends Schema.CollectionType {
-  collectionName: 'learning_categories';
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
   info: {
-    singularName: 'learning-category';
-    pluralName: 'learning-categories';
-    displayName: 'Learning Category';
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
   };
   options: {
     draftAndPublish: true;
@@ -1074,13 +1079,13 @@ export interface ApiLearningCategoryLearningCategory
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::learning-category.learning-category',
+      'api::category.category',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::learning-category.learning-category',
+      'api::category.category',
       'oneToOne',
       'admin::user'
     > &
@@ -1088,32 +1093,223 @@ export interface ApiLearningCategoryLearningCategory
   };
 }
 
-export interface ApiLearningPostLearningPost extends Schema.CollectionType {
-  collectionName: 'learning_posts';
+export interface ApiInvestmentHavePageInvestmentHavePage
+  extends Schema.SingleType {
+  collectionName: 'investment_have_pages';
   info: {
-    singularName: 'learning-post';
-    pluralName: 'learning-posts';
-    displayName: 'Learning Post';
+    singularName: 'investment-have-page';
+    pluralName: 'investment-have-pages';
+    displayName: 'InvestmentHavePage';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    description: Attribute.String & Attribute.Required;
-    content: Attribute.RichText & Attribute.Required;
-    thumb: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::learning-post.learning-post',
+      'api::investment-have-page.investment-have-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::learning-post.learning-post',
+      'api::investment-have-page.investment-have-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInvestmentNeedPageInvestmentNeedPage
+  extends Schema.SingleType {
+  collectionName: 'investment_need_pages';
+  info: {
+    singularName: 'investment-need-page';
+    pluralName: 'investment-need-pages';
+    displayName: 'InvestmentNeedPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::investment-need-page.investment-need-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::investment-need-page.investment-need-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearningCaseStudyPageLearningCaseStudyPage
+  extends Schema.SingleType {
+  collectionName: 'learning_case_study_pages';
+  info: {
+    singularName: 'learning-case-study-page';
+    pluralName: 'learning-case-study-pages';
+    displayName: 'LearningCaseStudyPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learning-case-study-page.learning-case-study-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learning-case-study-page.learning-case-study-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearningDownloadPageLearningDownloadPage
+  extends Schema.SingleType {
+  collectionName: 'learning_download_pages';
+  info: {
+    singularName: 'learning-download-page';
+    pluralName: 'learning-download-pages';
+    displayName: 'LearningDownloadPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learning-download-page.learning-download-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learning-download-page.learning-download-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearningFinancePageLearningFinancePage
+  extends Schema.SingleType {
+  collectionName: 'learning_finance_pages';
+  info: {
+    singularName: 'learning-finance-page';
+    pluralName: 'learning-finance-pages';
+    displayName: 'LearningFinancePage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learning-finance-page.learning-finance-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learning-finance-page.learning-finance-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearningLegalPageLearningLegalPage
+  extends Schema.SingleType {
+  collectionName: 'learning_legal_pages';
+  info: {
+    singularName: 'learning-legal-page';
+    pluralName: 'learning-legal-pages';
+    displayName: 'LearningLegalPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learning-legal-page.learning-legal-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learning-legal-page.learning-legal-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearningMarTechPageLearningMarTechPage
+  extends Schema.SingleType {
+  collectionName: 'learning_mar_tech_pages';
+  info: {
+    singularName: 'learning-mar-tech-page';
+    pluralName: 'learning-mar-tech-pages';
+    displayName: 'LearningMarTechPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learning-mar-tech-page.learning-mar-tech-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learning-mar-tech-page.learning-mar-tech-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1154,6 +1350,70 @@ export interface ApiMemberMember extends Schema.CollectionType {
   };
 }
 
+export interface ApiPromotionHavePagePromotionHavePage
+  extends Schema.SingleType {
+  collectionName: 'promotion_have_pages';
+  info: {
+    singularName: 'promotion-have-page';
+    pluralName: 'promotion-have-pages';
+    displayName: 'PromotionHavePage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promotion-have-page.promotion-have-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::promotion-have-page.promotion-have-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPromotionNeedPagePromotionNeedPage
+  extends Schema.SingleType {
+  collectionName: 'promotion_need_pages';
+  info: {
+    singularName: 'promotion-need-page';
+    pluralName: 'promotion-need-pages';
+    displayName: 'PromotionNeedPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promotion-need-page.promotion-need-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::promotion-need-page.promotion-need-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1180,9 +1440,17 @@ declare module '@strapi/types' {
       'api::about-us-team-section.about-us-team-section': ApiAboutUsTeamSectionAboutUsTeamSection;
       'api::about-us-values-section.about-us-values-section': ApiAboutUsValuesSectionAboutUsValuesSection;
       'api::blog.blog': ApiBlogBlog;
-      'api::learning-category.learning-category': ApiLearningCategoryLearningCategory;
-      'api::learning-post.learning-post': ApiLearningPostLearningPost;
+      'api::category.category': ApiCategoryCategory;
+      'api::investment-have-page.investment-have-page': ApiInvestmentHavePageInvestmentHavePage;
+      'api::investment-need-page.investment-need-page': ApiInvestmentNeedPageInvestmentNeedPage;
+      'api::learning-case-study-page.learning-case-study-page': ApiLearningCaseStudyPageLearningCaseStudyPage;
+      'api::learning-download-page.learning-download-page': ApiLearningDownloadPageLearningDownloadPage;
+      'api::learning-finance-page.learning-finance-page': ApiLearningFinancePageLearningFinancePage;
+      'api::learning-legal-page.learning-legal-page': ApiLearningLegalPageLearningLegalPage;
+      'api::learning-mar-tech-page.learning-mar-tech-page': ApiLearningMarTechPageLearningMarTechPage;
       'api::member.member': ApiMemberMember;
+      'api::promotion-have-page.promotion-have-page': ApiPromotionHavePagePromotionHavePage;
+      'api::promotion-need-page.promotion-need-page': ApiPromotionNeedPagePromotionNeedPage;
     }
   }
 }

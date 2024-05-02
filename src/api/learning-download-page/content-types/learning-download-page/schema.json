@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "learning_download_pages",
+  "info": {
+    "singularName": "learning-download-page",
+    "pluralName": "learning-download-pages",
+    "displayName": "LearningDownloadPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

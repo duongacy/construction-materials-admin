@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "investment_have_pages",
+  "info": {
+    "singularName": "investment-have-page",
+    "pluralName": "investment-have-pages",
+    "displayName": "InvestmentHavePage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -24,6 +24,19 @@
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "thumb": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category"
     }
   }
 }

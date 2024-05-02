@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "learning_case_study_pages",
+  "info": {
+    "singularName": "learning-case-study-page",
+    "pluralName": "learning-case-study-pages",
+    "displayName": "LearningCaseStudyPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

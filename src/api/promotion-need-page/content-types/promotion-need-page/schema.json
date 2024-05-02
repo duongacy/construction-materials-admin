@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "promotion_need_pages",
+  "info": {
+    "singularName": "promotion-need-page",
+    "pluralName": "promotion-need-pages",
+    "displayName": "PromotionNeedPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "investment_need_pages",
+  "info": {
+    "singularName": "investment-need-page",
+    "pluralName": "investment-need-pages",
+    "displayName": "InvestmentNeedPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

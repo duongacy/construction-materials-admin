@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "learning_mar_tech_pages",
+  "info": {
+    "singularName": "learning-mar-tech-page",
+    "pluralName": "learning-mar-tech-pages",
+    "displayName": "LearningMarTechPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
