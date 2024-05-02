@@ -1056,6 +1056,71 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
+export interface ApiLearningCategoryLearningCategory
+  extends Schema.CollectionType {
+  collectionName: 'learning_categories';
+  info: {
+    singularName: 'learning-category';
+    pluralName: 'learning-categories';
+    displayName: 'Learning Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learning-category.learning-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learning-category.learning-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearningPostLearningPost extends Schema.CollectionType {
+  collectionName: 'learning_posts';
+  info: {
+    singularName: 'learning-post';
+    pluralName: 'learning-posts';
+    displayName: 'Learning Post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
+    thumb: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learning-post.learning-post',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learning-post.learning-post',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMemberMember extends Schema.CollectionType {
   collectionName: 'members';
   info: {
@@ -1115,6 +1180,8 @@ declare module '@strapi/types' {
       'api::about-us-team-section.about-us-team-section': ApiAboutUsTeamSectionAboutUsTeamSection;
       'api::about-us-values-section.about-us-values-section': ApiAboutUsValuesSectionAboutUsValuesSection;
       'api::blog.blog': ApiBlogBlog;
+      'api::learning-category.learning-category': ApiLearningCategoryLearningCategory;
+      'api::learning-post.learning-post': ApiLearningPostLearningPost;
       'api::member.member': ApiMemberMember;
     }
   }
