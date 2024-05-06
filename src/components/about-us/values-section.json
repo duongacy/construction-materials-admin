@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_us_values_sections",
+  "info": {
+    "displayName": "ValuesSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.value"
+    }
+  }
+}

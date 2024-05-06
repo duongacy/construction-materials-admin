@@ -1,0 +1,57 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_us_pages",
+  "info": {
+    "singularName": "about-us-page",
+    "pluralName": "about-us-pages",
+    "displayName": "AboutUsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.hero-section",
+      "required": true
+    },
+    "blogsSection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.blogs-section",
+      "required": true
+    },
+    "imageSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.image-section",
+      "required": true
+    },
+    "logosCloudSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.logos-cloud-section"
+    },
+    "statsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.stats-section",
+      "required": true
+    },
+    "teamSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.team-section",
+      "required": true
+    },
+    "valuesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.values-section",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_about_us_logos_cloud_sections",
+  "info": {
+    "displayName": "LogosCloudSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "logos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

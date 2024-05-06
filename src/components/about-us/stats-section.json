@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_about_us_stats_sections",
+  "info": {
+    "displayName": "StatsSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.stat"
+    }
+  }
+}

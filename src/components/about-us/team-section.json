@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_us_team_sections",
+  "info": {
+    "displayName": "TeamSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::member.member"
+    }
+  }
+}
