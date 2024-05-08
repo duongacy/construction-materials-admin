@@ -893,6 +893,38 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiInvestmentHaveInvestmentHave extends Schema.CollectionType {
+  collectionName: 'investment_haves';
+  info: {
+    singularName: 'investment-have';
+    pluralName: 'investment-haves';
+    displayName: 'InvestmentHave';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    icon: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::investment-have.investment-have',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::investment-have.investment-have',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiInvestmentHavePageInvestmentHavePage
   extends Schema.SingleType {
   collectionName: 'investment_have_pages';
@@ -918,6 +950,40 @@ export interface ApiInvestmentHavePageInvestmentHavePage
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::investment-have-page.investment-have-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInvestmentNeedInvestmentNeed extends Schema.CollectionType {
+  collectionName: 'investment_needs';
+  info: {
+    singularName: 'investment-need';
+    pluralName: 'investment-needs';
+    displayName: 'InvestmentNeed';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    icon: Attribute.Media;
+    subtitle: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::investment-need.investment-need',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::investment-need.investment-need',
       'oneToOne',
       'admin::user'
     > &
@@ -1150,6 +1216,38 @@ export interface ApiMemberMember extends Schema.CollectionType {
   };
 }
 
+export interface ApiPromotionHavePromotionHave extends Schema.CollectionType {
+  collectionName: 'promotion_haves';
+  info: {
+    singularName: 'promotion-have';
+    pluralName: 'promotion-haves';
+    displayName: 'PromotionHave';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.String & Attribute.Required;
+    icon: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promotion-have.promotion-have',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::promotion-have.promotion-have',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPromotionHavePagePromotionHavePage
   extends Schema.SingleType {
   collectionName: 'promotion_have_pages';
@@ -1175,6 +1273,38 @@ export interface ApiPromotionHavePagePromotionHavePage
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::promotion-have-page.promotion-have-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPromotionNeedPromotionNeed extends Schema.CollectionType {
+  collectionName: 'promotion_needs';
+  info: {
+    singularName: 'promotion-need';
+    pluralName: 'promotion-needs';
+    displayName: 'PromotionNeed';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    icon: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::promotion-need.promotion-need',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::promotion-need.promotion-need',
       'oneToOne',
       'admin::user'
     > &
@@ -1235,7 +1365,9 @@ declare module '@strapi/types' {
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
+      'api::investment-have.investment-have': ApiInvestmentHaveInvestmentHave;
       'api::investment-have-page.investment-have-page': ApiInvestmentHavePageInvestmentHavePage;
+      'api::investment-need.investment-need': ApiInvestmentNeedInvestmentNeed;
       'api::investment-need-page.investment-need-page': ApiInvestmentNeedPageInvestmentNeedPage;
       'api::learning-case-study-page.learning-case-study-page': ApiLearningCaseStudyPageLearningCaseStudyPage;
       'api::learning-download-page.learning-download-page': ApiLearningDownloadPageLearningDownloadPage;
@@ -1243,7 +1375,9 @@ declare module '@strapi/types' {
       'api::learning-legal-page.learning-legal-page': ApiLearningLegalPageLearningLegalPage;
       'api::learning-mar-tech-page.learning-mar-tech-page': ApiLearningMarTechPageLearningMarTechPage;
       'api::member.member': ApiMemberMember;
+      'api::promotion-have.promotion-have': ApiPromotionHavePromotionHave;
       'api::promotion-have-page.promotion-have-page': ApiPromotionHavePagePromotionHavePage;
+      'api::promotion-need.promotion-need': ApiPromotionNeedPromotionNeed;
       'api::promotion-need-page.promotion-need-page': ApiPromotionNeedPagePromotionNeedPage;
     }
   }

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "investment_needs",
+  "info": {
+    "singularName": "investment-need",
+    "pluralName": "investment-needs",
+    "displayName": "InvestmentNeed",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

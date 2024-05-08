@@ -84,11 +84,12 @@ module.exports = (plugin) => {
         params.password,
         user.password
       );
-
+      let rf;
       if (!validPassword) {
         throw new ValidationError("Invalid identifier or password");
       } else {
-        ctx.cookies.set("refreshToken", issueRefreshToken({ id: user.id }), {
+        rf = issueRefreshToken({ id: user.id });
+        ctx.cookies.set("refreshToken", rf, {
           httpOnly: true,
           secure: false,
           signed: true,
@@ -116,10 +117,18 @@ module.exports = (plugin) => {
           "Your account has been blocked by an administrator"
         );
       }
-      return ctx.send({
-        jwt: getService("jwt").issue({ id: user.id }),
-        user: await sanitizeUser(user, ctx),
-      });
+      const a = rf
+        ? ctx.send({
+            jwt: getService("jwt").issue({ id: user.id }),
+            user: await sanitizeUser(user, ctx),
+            refreshToken: rf,
+          })
+        : ctx.send({
+            jwt: getService("jwt").issue({ id: user.id }),
+            user: await sanitizeUser(user, ctx),
+          });
+      rf = undefined;
+      return a;
     }
     // Connect the user with a third-party provider.
     try {
@@ -194,7 +203,7 @@ module.exports = (plugin) => {
     config: {
       policies: [],
       prefix: "",
-      auth:false
+      auth: false,
     },
   });
   return plugin;

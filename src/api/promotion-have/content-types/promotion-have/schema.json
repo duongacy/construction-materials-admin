@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotion_haves",
+  "info": {
+    "singularName": "promotion-have",
+    "pluralName": "promotion-haves",
+    "displayName": "PromotionHave"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
