@@ -847,9 +847,9 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     description: Attribute.Text & Attribute.Required;
     content: Attribute.RichText & Attribute.Required;
     thumb: Attribute.Media & Attribute.Required;
-    categories: Attribute.Relation<
+    category: Attribute.Relation<
       'api::blog.blog',
-      'oneToMany',
+      'oneToOne',
       'api::category.category'
     >;
     createdAt: Attribute.DateTime;
