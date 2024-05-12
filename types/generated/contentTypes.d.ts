@@ -802,7 +802,7 @@ export interface ApiAboutUsPageAboutUsPage extends Schema.SingleType {
   attributes: {
     heroSection: Attribute.Component<'about-us.hero-section'> &
       Attribute.Required;
-    blogsSection: Attribute.Component<'about-us.blogs-section', true> &
+    blogsSection: Attribute.Component<'about-us.blogs-section'> &
       Attribute.Required;
     imageSection: Attribute.Component<'about-us.image-section'> &
       Attribute.Required;

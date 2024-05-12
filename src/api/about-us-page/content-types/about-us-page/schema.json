@@ -20,7 +20,7 @@
     },
     "blogsSection": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "about-us.blogs-section",
       "required": true
     },
