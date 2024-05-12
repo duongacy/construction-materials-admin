@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
     enabled: true,
     config: {
       jwt: {
-        expiresIn: "15m",
+        expiresIn: process.env.JWT_SECRET_EXPIRES,
       },
     },
   },
